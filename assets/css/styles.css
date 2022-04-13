@@ -1,0 +1,336 @@
+/*quitamos bargen y padding para no tener conflictor con otros estilos posteiromente*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Hacemos que el scroll sea suave al hacer un href de cualquier seccion de la web */
+html {
+    scroll-behavior: smooth;
+}
+
+/*Ocultamos el scroll X para que al hacer pequena la pantalla no se vea ese scroll*/
+body{
+    overflow-x: hidden;
+}
+
+video {
+    width: 100%;
+}
+
+/*HEADER*/
+
+header{
+    background: #343a40;
+}
+
+/*Damos estilos al icon logo del menu*/
+#menu-logo{
+    width: 3rem;
+    height: 3rem;
+    margin-left: 1.6rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+/*Usamos estas clases para activar o desctivar con opacity el acordeon del icon menu cuando le damos click*/
+.active-acordeon{
+    transition: opacity 2s linear;
+    transform:translate(0);
+    opacity: 1;
+}
+
+.inactive-acordeon{
+    transform:translate(9999px);
+    opacity: 0;
+}
+
+/*Damos estilos nav menu, lo hacemos flexible, hacemos position fixed para fijarlo y z-index para que est[e por encima de cualquioer elemento*/
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+    position: fixed;
+    z-index: 1;
+}
+
+/*Estilos varios al logo*/
+#logo{
+    padding-top: 1rem;
+}
+
+#logo img{
+    width:150px;
+    height:150px;
+    border-radius:75px;
+    border:3px solid #666;
+}
+
+/*Hacemos flexible la lista de elementos del menu y damos estilos*/
+nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+nav ul li{
+    list-style: none;
+    margin-left: 2rem;
+}
+
+nav a{
+    text-decoration: none;
+    font-size: xx-large;
+    color: white;
+}
+nav a:hover{
+    color: crimson;
+    transition: 0.3s;
+}
+
+/*Damos estilos al titulo sushIFP*/
+#titulo{
+    font-size: 6rem;
+    text-align: center;
+    font-family: 'Niconne', cursive;
+    color: white;
+    text-shadow: 1px 9px 5px rgb(0 0 0 / 57%);
+    font-weight: normal;
+    padding-top: 6rem;
+}
+
+#titulo span{
+    color: crimson;
+}
+
+/*Damos estilos al subtitulo escrito en japones*/
+#subtitulo{
+    font-size: 2.5rem;
+    text-align: center;
+    font-family: 'Niconne', cursive;
+    color: white;
+    text-shadow: 1px 9px 5px rgb(0 0 0 / 57%);
+    font-weight: normal;
+    padding-bottom: 2rem;
+    color: crimson;
+}
+
+/*le damos un color al fondo para que este todo homogeneo y sin partes blancas*/
+#container{
+    background: #212529;
+}
+
+/*Clases para el titulo y subtitulo de las secciones*/
+
+.titulo-seccion{
+    padding: 0 !important;
+    font-size: 4rem !important;
+}
+
+.subtitulo-seccion{
+    font-size: 1rem !important;
+}
+
+/*Seccion sobre nosotros*/
+
+/*Damos estilos a la seccion nosotros para que este el titulo a la inquierda y el parrafo a la derecha*/
+#nosotros{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+    background: #212529;
+}
+
+/*ancho del parrafo en % para que cuando sea responsive siempre ocupe ese %*/
+#nosotros p{
+    width: 50%;
+    padding-left: 2rem;
+    color: #eee;
+}
+
+/*Seccion de los sushis*/
+
+/*Damos estilos a la seccion sushi*/
+#sushi{
+    padding-top: 2rem;
+    min-height: 500px;
+    background: #343a40;
+}
+
+/*Hacemos flex tanto la lista, como la lista de sushi, como el div de las piezas para que tenga forma con los span*/
+#sushi ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+#sushi-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#sushi-list li{
+    color: #eee;
+    margin-left: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+}
+#sushi-list li:hover{
+    color: crimson;
+    transition: 0.3s;
+}
+
+.piezas{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pieza{
+    display: flex;
+    align-items: flex-end;
+}
+
+.pieza img{
+    width: 200px;
+    height: 200px;
+}
+
+.pieza span{
+    color: #eeeeee;
+    margin-left: 5px;
+    display: block;
+}
+
+/*Seccion de la galeria*/
+
+/*Damos estilos a la seccion galeria*/
+#galeria{
+    padding-top: 2rem;
+    min-height: 500px;
+    background: #212529;
+}
+
+/*Hacemos la galeria flexible para que pueda ser responsive facilmente y centramos la galeria*/
+.imagenes{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/*Cada imagen se separa con unos margenes definidos*/
+.imagen{
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+/*Definimos el tamano de cada imagen y le agreamos un borde chulo*/
+.imagen img{
+    height: 400px;
+    width: 600px;
+    border: 3px solid white;
+    border-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50'><defs><linearGradient id='redgradient'><stop offset='0' stop-color='%23FFC14D'/><stop offset='0.362' stop-color='%23FF4834'/><stop offset='1' stop-color='%233B0300'/></linearGradient></defs><g id='Layer_1'><path d='M0,0 L50,0 L50,50 L0,50 L0,0 z' fill='url(%23redgradient)' width='100%' height='100%'/></g></svg>") 10% stretch;
+    cursor: pointer;
+
+}
+
+/*Seccion de caja de contacto*/
+
+/*Damos estilos a la seccion contacto*/
+#contacto{
+    padding-top: 2rem;
+    min-height: 500px;
+    background: #343a40;
+}
+
+/*Centramos el contenido de la caja de contacto*/
+#reserva{
+    display: flex;
+    justify-content: center;
+}
+
+/*Damos estilos a las cajas de informacion*/
+#reserva input{
+    margin-bottom: 0.5rem;
+    width: 100%;
+    padding: 1rem;
+    display: block;
+}
+
+/*Cuando el mouse esta encima de los campos de la reserva*/
+#reserva input:hover{
+    border-color: crimson;
+}
+
+/*Cuando el mouse esta encima del boton reserva*/
+#reserva input[type='button']:hover{
+    border-color: darkred;
+    background: crimson;
+    color: #eeeeee;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/*FOOTER LO HACEMOS FLEX PARA TENER LA INFO CENTRADA CON ALIGN Y JUSTIFY*/
+
+/*Lo hacemos flex para tener la info centrada y definimos una altura y color de fondo*/
+#pie{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    background: #212529;
+}
+
+/*Damos estilos de tamano de letra y color al parrafo del footer*/
+#pie p{
+    font-size: medium;
+    color: white;
+}
+
+/*MEDIAQUERY PARA EL MENU Y DEMAS APARTADOS PARA QUE SEAN RESPONSIVE*/
+@media (max-width: 850px) {
+
+    /*Hacemos estos display para que la lista del menu se encuentre debajo del icon menu*/
+    nav{
+        display: inline-block;
+    }
+    nav ul{
+        display: block;
+    }
+
+    /*Ocultamos el logo de la web*/
+    #logo{
+        display: none;
+    }
+
+    /*Hacemos aparecer el icon del menu*/
+    #menu-logo{
+        display: block;
+    }
+
+    /*Hacemos mas pequenas las imagenes de la galerria para que sea responsive*/
+    .imagen img{
+        height: 200px;
+        width: 300px;
+    }
+
+    /*Ponemos el titulo de nosotros arriba del parrafo para que se vea mejor al momento de achicar la pantalla*/
+    #nosotros{
+        display: block;
+        min-height: 0;
+    }
+    #nosotros p{
+        width: 100%;
+        padding-bottom: 2rem;
+    }
+}

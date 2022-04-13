@@ -1,0 +1,60 @@
+.modal-reserva {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* Contenido del modal */
+.modal-content-reserva {
+    background-color: #212529;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+#modal-content-reserva div{
+    text-align: center;
+}
+
+#modal-content-reserva div h2{
+    color: #eeeeee;
+}
+
+#ok-img{
+    display: flex;
+    justify-content: center;
+}
+
+#ok-img img{
+    width: 150px;
+    height: 150px;
+    margin-bottom: 1rem;
+}
+
+.modal-data{
+    color: #eeeeee;
+}
+
+/* El boton de cierre del modal */
+.close-reserva {
+    color: #eeeeee;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-reserva:hover,
+.close-reserva:focus {
+    color: crimson;
+    text-decoration: none;
+    cursor: pointer;
+}

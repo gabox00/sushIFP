@@ -1,0 +1,435 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <title>SushiFP</title>
+    <!-- Cargamos los estilos -->
+    <link rel="stylesheet" href="assets/css/styles.css"/>
+    <link rel="stylesheet" href="assets/css/modal.css"/>
+    <link rel="stylesheet" href="assets/css/lightbox.css"/>
+    <link rel="stylesheet" href="assets/css/slideshow.css"/>
+    <link rel="stylesheet" href="assets/css/tooltip.css"/>
+    <!-- Cargamos las librerias -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
+    <!-- Cargamos los js que hemos realizado -->
+    <script src="js/main.js"></script>
+    <script src="js/acordeon.js"></script>
+    <script src="js/contacto.js"></script>
+    <script src="js/lightbox.js"></script>
+    <script src="js/parallax.js"></script>
+    <script src="js/reactiveContent.js"></script>
+    <script src="js/slideshow.js"></script>
+</head>
+<body>
+<div id="container">
+    <!-- CABECERA -->
+    <header>
+        <!-- MENU -->
+        <nav>
+            <!-- menu logo aparecera cuando el with de la web sea < 850, reutilizamos en ul del nav para el acordeon -->
+            <img id="menu-logo" src="assets/img/menu.png" alt="menu" hidden onclick="showOrHideAcordeonMenu()">
+
+            <!-- menu con su logo que se ve al abrir la pagina -->
+            <div id="logo">
+                <a href="#"><img src="assets/img/logo.jpg" alt="SushIFP"></a>
+            </div>
+            <ul id="menu-list" class="active-acordeon">
+                <li>
+                    <div class="tooltip">
+                        <span class="tooltiptext">始まり</span>
+                        <a href="#">Inicio</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="tooltip">
+                        <span class="tooltiptext">我ら</span>
+                        <a href="#nosotros">Nosotros</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="tooltip">
+                        <span class="tooltiptext">すし</span>
+                        <a href="#sushi">Sushi</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="tooltip">
+                        <span class="tooltiptext">ギャラリー</span>
+                        <a href="#galeria">Galería</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="tooltip">
+                        <span class="tooltiptext">コンタクト</span>
+                        <a href="#contacto">Contacto</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <h1 id="titulo">Sush<span>IFP</span></h1>
+        <h2 id="subtitulo">召し上がれ</h2>
+    </header>
+
+    <!-- Contenido del slideshow -->
+    <div class="slideshow-container">
+        <div class="mySlidesShow fade">
+            <img class="thumbnail" src="assets/img/galeria1-min.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlidesShow fade">
+            <img class="thumbnail" src="assets/img/galeria2-min.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlidesShow fade">
+            <img class="thumbnail" src="assets/img/galeria3-min.jpg" style="width:100%">
+        </div>
+
+        <!-- botones de atras y siguiente para cambiar de imagen -->
+        <a class="prevSlideShow" onclick="plusSlidesBox(-1)">&#10094;</a>
+        <a class="nextSlideShow" onclick="plusSlidesBox(1)">&#10095;</a>
+    </div>
+
+    <!-- circulos para cambiar de imagen directamente al que demos click -->
+    <div style="text-align:center;background: #212529;">
+        <span class="dotSlideShow" onclick="currentSlideBox(1)"></span>
+        <span class="dotSlideShow" onclick="currentSlideBox(2)"></span>
+        <span class="dotSlideShow" onclick="currentSlideBox(3)"></span>
+    </div>
+
+    <!-- seccion nosotros -->
+    <section id="nosotros">
+        <div class="header-seccion">
+            <h3 id="titulo" class="titulo-seccion">Sobre nosotros</h3>
+            <h3 id="subtitulo" class="subtitulo-seccion">私たちに関しては</h3>
+        </div>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tortor neque, maximus eget consectetur sit amet,
+            feugiat non leo. Curabitur nec turpis leo. Sed tempus ipsum odio, consectetur placerat erat efficitur sit amet.
+            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur pellentesque
+            vel velit eget condimentum. Morbi vel mauris id ligula tempus condimentum. Fusce consequat varius enim, non ultricie s
+            nisl scelerisque at. Duis et libero et eros aliquam volutpat sed ac velit. Quisque vel accumsan quam. Aenean tempor nisl
+            et nibh ullamcorper mattis.
+        </p>
+    </section>
+
+    <!-- seccion sushi -->
+    <section id="sushi">
+        <div class="header-seccion">
+            <h3 id="titulo" class="titulo-seccion">Sushi</h3>
+            <h3 id="subtitulo" class="subtitulo-seccion">すし</h3>
+        </div>
+        <!-- lista de sushies -->
+        <ul id="sushi-list">
+            <div class="tooltip">
+                <span class="tooltiptext">みんな</span>
+                <li id="todos-li" onclick="displayDIV(this,'todos')">Todos</li>
+            </div>
+            <div class="tooltip">
+                <span class="tooltiptext">握り寿司</span>
+                <li id="nigiris-li" onclick="displayDIV(this,'nigiris')" style="color:crimson;">Nigiris</li>
+            </div>
+            <div class="tooltip">
+                <span class="tooltiptext">ガンカン</span>
+                <li id="gunkans-li" onclick="displayDIV(this,'gunkans')">Gunkans</li>
+            </div>
+            <div class="tooltip">
+                <span class="tooltiptext">マキス</span>
+                <li id="makis-li" onclick="displayDIV(this,'makis')">Makis</li>
+            </div>
+        </ul>
+        <!-- piezas de sushis por lista de sushi -->
+        <div id="nigiris" class="piezas">
+            <div class="pieza">
+                <img src="assets/img/nigiri_salmon.png" alt="Nigiri Salmon">
+                <div>
+                    <span>Nigiri de salmón (2 piezas)</span>
+                    <span>10 euros</span>
+                </div>
+            </div>
+            <div class="pieza">
+                <img src="assets/img/nigiri_aguacate.png" alt="Nigiri Aguacate">
+                <div>
+                    <span>Nigiri de aguacate (2 piezas)</span>
+                    <span>5 euros</span>
+                </div>
+            </div>
+            <div class="pieza">
+                <img src="assets/img/nigiri_anguila.png" alt="Nigiri Anguila">
+                <div>
+                    <span>Nigiri de anguila (2 piezas)</span>
+                    <span>12 euros</span>
+                </div>
+            </div>
+            <div class="pieza">
+                <img src="assets/img/nigiri_gamba.png" alt="Nigiri Gamba">
+                <div>
+                    <span>Nigiri de gamba (2 piezas)</span>
+                    <span>10 euros</span>
+                </div>
+            </div>
+            <div class="pieza">
+                <img src="assets/img/nigiri_mango.png" alt="Nigiri Mango">
+                <div>
+                    <span>Nigiri de mango (2 piezas)</span>
+                    <span>7 euros</span>
+                </div>
+            </div>
+            <div class="pieza">
+                <img src="assets/img/nigiri_pulpo.png" alt="Nigiri Pulpo">
+                <div>
+                    <span>Nigiri de pulpo (2 piezas)</span>
+                    <span>11 euros</span>
+                </div>
+            </div>
+        </div>
+        <!-- piezas de sushis por lista de sushi -->
+        <div id="gunkans" class="piezas" style="display: none;">
+            <div class="pieza">
+                <img src="assets/img/gunkan_salmon.png" alt="Gunkan Salmon">
+                <div>
+                    <span>Gunkan de Salmon (2 piezas)</span>
+                    <span>9.5 euros</span>
+                </div>
+            </div>
+            <div class="pieza">
+                <img src="assets/img/gunkan_menta.png" alt="Gunkan Menta">
+                <div>
+                    <span>Gunkan de Salmon y menta (2 piezas)</span>
+                    <span>9 euros</span>
+                </div>
+            </div>
+        </div>
+        <!-- piezas de sushis por lista de sushi -->
+        <div id="makis" class="piezas" style="display: none;">
+            <div class="pieza">
+                <img src="assets/img/maki_salmon.png" alt="Maki Salmon">
+                <div>
+                    <span>Maki de Salmon (8 piezas)</span>
+                    <span>8 euros</span>
+                </div>
+            </div>
+            <div class="pieza">
+                <img src="assets/img/maki_aguacate.png" alt="Maki Aguacate">
+                <div>
+                    <span>Maki de aguacate (8 piezas)</span>
+                    <span>7 euros</span>
+                </div>
+            </div>
+            <div class="pieza">
+                <img src="assets/img/maki_pepino.png" alt="Maki Pepino">
+                <div>
+                    <span>Maki de pepino (8 piezas)</span>
+                    <span>7 euros</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- seccion galeria -->
+    <section id="galeria">
+        <div class="header-seccion">
+            <h3 id="titulo" class="titulo-seccion">Galeria</h3>
+            <h3 id="subtitulo" class="subtitulo-seccion">ギャラリー</h3>
+        </div>
+        <!-- galeria de iamgenes -->
+        <div class="imagenes">
+            <div class="imagen" data-aos="fade-right">
+                <img onclick="openModal('myModal');currentSlide(1)" src="assets/img/galeria1-min.jpg" alt="Sushi">
+            </div>
+            <div class="imagen" data-aos="fade-left">
+                <img onclick="openModal('myModal');currentSlide(2)" src="assets/img/galeria2-min.jpg" alt="Sushi">
+            </div>
+            <div class="imagen" data-aos="fade-right">
+                <img onclick="openModal('myModal');currentSlide(3)" src="assets/img/galeria3-min.jpg" alt="Sushi">
+            </div>
+            <div class="imagen" data-aos="fade-left">
+                <img onclick="openModal('myModal');currentSlide(4)" src="assets/img/galeria4-min.jpg" alt="Sushi">
+            </div>
+            <div class="imagen" data-aos="fade-right">
+                <img onclick="openModal('myModal');currentSlide(5)" src="assets/img/galeria5-min.jpg" alt="Sushi">
+            </div>
+            <div class="imagen" data-aos="fade-left">
+                <img onclick="openModal('myModal');currentSlide(6)" src="assets/img/galeria6-min.jpg" alt="Sushi">
+            </div>
+            <div class="imagen" data-aos="fade-right">
+                <img onclick="openModal('myModal');currentSlide(7)" src="assets/img/galeria7-min.jpg" alt="Sushi">
+            </div>
+            <div class="imagen" data-aos="fade-left">
+                <img onclick="openModal('myModal');currentSlide(8)" src="assets/img/galeria8-min.jpg" alt="Sushi">
+            </div>
+            <div class="imagen" data-aos="fade-right">
+                <img onclick="openModal('myModal');currentSlide(9)" src="assets/img/galeria9-min.jpg" alt="Sushi">
+            </div>
+            <div class="imagen" data-aos="fade-left">
+                <img onclick="openModal('myModal');currentSlide(10)" src="assets/img/galeria10-min.jpg" alt="Sushi">
+            </div>
+            <div class="imagen" data-aos="fade-right">
+                <img onclick="openModal('myModal');currentSlide(11)" src="assets/img/galeria11-min.jpg" alt="Sushi">
+            </div>
+            <div class="imagen" data-aos="fade-left">
+                <img onclick="openModal('myModal');currentSlide(12)" src="assets/img/galeria12-min.jpg" alt="Sushi">
+            </div>
+        </div>
+    </section>
+
+    <!-- agregamos un video a la web y hacemos que se ejecute actuomaticamente en loop -->
+    <video src="assets/video/nigiris.mp4" autoplay loop muted></video>
+
+    <!-- seccion contacto -->
+    <section id="contacto">
+        <div class="header-seccion">
+            <h3 id="titulo" class="titulo-seccion">Contáctanos</h3>
+            <h3 id="subtitulo" class="subtitulo-seccion">お問い合わせ</h3>
+        </div>
+        <!-- formulario para la reserva en el restaurante -->
+        <div id="reserva">
+            <form>
+                <input id="nombreApellidos" type="text" placeholder="Nombre y Apellidos" required>
+                <input id="numeroPersonas" type="number" placeholder="Numero de personas" required>
+                <input id="fechaReserva" type="date" required>
+                <input id="email" type="email"  placeholder="Email" required>
+                <input type="button" value="Reservar" onclick="sendReserva()">
+            </form>
+        </div>
+    </section>
+
+    <!-- PIE DE PAGINA -->
+    <footer id="pie">
+        <p>Desarrollado por Gabriel Guierrez C.A &copy;</p>
+    </footer>
+
+</div>
+</body>
+
+<!-- Modal oculto que posteriormente utilizamos, activamos y rellenamos en el reactiveContent.js -->
+<div id="myModalReserva" class="modal-reserva">
+    <div id="modal-content-reserva" class="modal-content-reserva"></div>
+</div>
+
+<!-- Modal oculto que posteriormente utilizamos, activamos y rellenamos en el lightbox.js -->
+<div id="myModal" class="modal">
+    <span class="close cursor" onclick="closeModal('myModal')">&times;</span>
+    <div class="modal-content">
+
+        <div class="mySlides">
+            <div class="numbertext">1 / 12</div>
+            <img src="assets/img/galeria1-min.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">2 / 12</div>
+            <img src="assets/img/galeria2-min.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">3 / 12</div>
+            <img src="assets/img/galeria3-min.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">4 / 12</div>
+            <img src="assets/img/galeria4-min.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">5 / 12</div>
+            <img src="assets/img/galeria5-min.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">6 / 12</div>
+            <img src="assets/img/galeria6-min.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">7 / 12</div>
+            <img src="assets/img/galeria7-min.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">8 / 12</div>
+            <img src="assets/img/galeria8-min.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">9 / 12</div>
+            <img src="assets/img/galeria9-min.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">10 / 12</div>
+            <img src="assets/img/galeria10-min.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">11 / 12</div>
+            <img src="assets/img/galeria11-min.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">12 / 12</div>
+            <img src="assets/img/galeria12-min.jpg" style="width:100%">
+        </div>
+
+        <!-- botones de atras y siguiente para cambiar de imagen -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        <div class="caption-container">
+            <p id="caption"></p>
+        </div>
+
+        <!-- imagenens miniaturas del lightbox -->
+        <div class="column">
+            <img class="demo" src="assets/img/galeria1-min.jpg" onclick="currentSlide(1)" alt="">
+        </div>
+
+        <div class="column">
+            <img class="demo" src="assets/img/galeria2-min.jpg" onclick="currentSlide(2)" alt="">
+        </div>
+
+        <div class="column">
+            <img class="demo" src="assets/img/galeria3-min.jpg" onclick="currentSlide(3)" alt="">
+        </div>
+
+        <div class="column">
+            <img class="demo" src="assets/img/galeria4-min.jpg" onclick="currentSlide(4)" alt="">
+        </div>
+
+        <div class="column">
+            <img class="demo" src="assets/img/galeria5-min.jpg" onclick="currentSlide(5)" alt="">
+        </div>
+
+        <div class="column">
+            <img class="demo" src="assets/img/galeria6-min.jpg" onclick="currentSlide(6)" alt="">
+        </div>
+
+        <div class="column">
+            <img class="demo" src="assets/img/galeria1-min.jpg" onclick="currentSlide(7)" alt="">
+        </div>
+
+        <div class="column">
+            <img class="demo" src="assets/img/galeria8-min.jpg" onclick="currentSlide(8)" alt="">
+        </div>
+
+        <div class="column">
+            <img class="demo" src="assets/img/galeria9-min.jpg" onclick="currentSlide(9)" alt="">
+        </div>
+
+        <div class="column">
+            <img class="demo" src="assets/img/galeria10-min.jpg" onclick="currentSlide(10)" alt="">
+        </div>
+
+        <div class="column">
+            <img class="demo" src="assets/img/galeria11-min.jpg" onclick="currentSlide(11)" alt="">
+        </div>
+
+        <div class="column">
+            <img class="demo" src="assets/img/galeria12-min.jpg" onclick="currentSlide(12)" alt="">
+        </div>
+    </div>
+</div>
+
+</html>
